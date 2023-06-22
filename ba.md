@@ -1,20 +1,49 @@
 # Бизнес аналитика
 
 - [Бизнес аналитика](#бизнес-аналитика)
+  - [Порядок артефактов\\активностей](#порядок-артефактовактивностей)
+  - [Metrics Driven Development, Lean Startup](#metrics-driven-development-lean-startup)
   - [Use Case (UC) Сценарии использования](#use-case-uc-сценарии-использования)
   - [User Story (US) Пользовательские истории](#user-story-us-пользовательские-истории)
     - [UC vs US](#uc-vs-us)
   - [Event Storming](#event-storming)
   - [Карта влияния Impact Mapping](#карта-влияния-impact-mapping)
   - [Бизнес процесс (БП)](#бизнес-процесс-бп)
-  - [Links](#links)
 
-TODO Порядок артефактов\активностей
+## Порядок артефактов\активностей
 
-1. Impact Mapping
+[Понимание предметной области](http://agilemindset.ru/%d0%b2%d0%b0%d0%b6%d0%bd%d0%be%d1%81%d1%82%d1%8c-%d0%bf%d0%be%d0%bd%d0%b8%d0%bc%d0%b0%d0%bd%d0%b8%d1%8f-%d0%bf%d1%80%d0%b5%d0%b4%d0%bc%d0%b5%d1%82%d0%bd%d0%be%d0%b9-%d0%be%d0%b1%d0%bb%d0%b0%d1%81/):
+
+- Какую проблему мы хотим решить?
+- Кто пользователи/заказчики?
+- Как выглядит процесс от начала и до конца в реальном мире?
+- Какие риски и ограничения существуют?
+- Есть ли зависимости?
+- Какую ценность несет наше решение?
+
+Подходы к аналитике:
+
+1. Карта влияния Impact Mapping
 2. БП
 3. Event Storming
 4. UC\US
+5. DDD проектирование
+
+## Metrics Driven Development, Lean Startup
+
+![mdd](img/ba/mdd.png)
+![ls](img/ba/lean.startup.jpg)
+
+- Customer journey mapping клиентский путь
+  - [mermaid](https://mermaid-js.github.io/mermaid/#/./user-journey)
+- В основе концепции lean startup лежит цикл обратной связи __создать-оценить-научиться__. Важнейшая задача и суть управления стартапом — стремиться сокращать время цикла обратной связи.
+- Бизнес метрики, посчитать как сейчас, что будет
+- Мнение заказчика по гипотезам-проблемам с ценностью
+- Критерии успеха бизнес инициативы Goal Question Metric model. 
+- Продуктовые метрики качества
+- Непрерывная добыча данных
+- Каждая задача должна быть оценена в деньгах бизнесом: гипотеза ценности и гипотеза роста
+- Разрабатывайте полноценную версию фичи после подтверждения ее эффективности через MVP
 
 ## Use Case (UC) Сценарии использования
 
@@ -76,6 +105,3 @@ TO-DO
     - [REST API](https://habr.com/ru/post/416491/)
     - [Designer Eclipse](https://www.activiti.org/userguide/#eclipseDesignerInstallation)
 
-## Links
-
-http://agilemindset.ru/%d0%b2%d0%b0%d0%b6%d0%bd%d0%be%d1%81%d1%82%d1%8c-%d0%bf%d0%be%d0%bd%d0%b8%d0%bc%d0%b0%d0%bd%d0%b8%d1%8f-%d0%bf%d1%80%d0%b5%d0%b4%d0%bc%d0%b5%d1%82%d0%bd%d0%be%d0%b9-%d0%be%d0%b1%d0%bb%d0%b0%d1%81/

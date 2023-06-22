@@ -2,15 +2,17 @@
 
 База знаний по аналитике.
 
-* Аналитика
-  * [Use Case, User Story](ba.md)
-* Бизнес процессы  
-  * [ККТ](business/kkt.md)
-  * [СДО](business/sdo.md)
-  * [СМО](business/smo.md)
-  * [Лиды](business/leads.md)
-    * [Mindbox](business/mindbox.md)  
-* [Бизнес и ИТ стратегия](strategy.md)
+- Аналитика
+  - [Use Case, User Story](ba.md)
+- Бизнес процессы  
+  - [ККТ](business/kkt.md)
+  - [СДО](business/sdo.md)
+  - системы массового обслуживания [СМО](business/smo.md)
+  - [Лиды](business/leads.md)
+    - [Mindbox](business/mindbox.md)
+  - [Кредиты](business/cc.md)
+  - [Процессинг](business/processing.md)
+- [Бизнес и ИТ стратегия](strategy.md)
 
 ## Tools
 
