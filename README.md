@@ -3,7 +3,7 @@
 База знаний по аналитике.
 
 - Аналитика
-  - [Use Case, User Story](ba.md)
+  - [Event Storming, Impact Mappin, Use Case, User Story](ba.md)
 - Бизнес процессы  
   - [ККТ](business/kkt.md)
   - [СДО](business/sdo.md)
