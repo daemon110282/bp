@@ -4,9 +4,9 @@
 
 - Бизнес процессы  
   - [ККТ](business/kkt.md)
-  - [СДО](business/sdo.md)
+  - [СДО](business/dbo/sdo.md)
   - системы массового обслуживания [СМО](business/smo.md)
-  - [Лиды](business/leads.md)
-    - [Mindbox](business/mindbox.md)  
-  - [Кредиты](business/cc.md)
-  - [Процессинг](business/processing.md)
+  - [Лиды](business/crm/leads.md)
+    - [Mindbox](business/crm/mindbox.md)  
+  - [Кредиты](business/cc/cc.md)
+  - [Процессинг](business/pay/processing.md)

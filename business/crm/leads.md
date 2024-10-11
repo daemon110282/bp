@@ -1,6 +1,16 @@
 # Лиды
 
+- [Лиды](#лиды)
+  - [Модель](#модель)
+  - [Интернет маркетинг термины](#интернет-маркетинг-термины)
+  - [Client Data Platform CDP](#client-data-platform-cdp)
+
+## Модель
+
 ![Схема](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/daemon110282/bp/main/scheme/leads.puml)
+
+- User Id - персональный идентификатор, закреплённая за [конкретным пользователем](https://roistat.com/rublog/user-id/)
+- Client Id - веб аналитика, анонимный идентификатор браузера
 
 ## Интернет маркетинг термины
 
@@ -34,4 +44,4 @@
 
 ## Client Data Platform CDP
 
-- [MindBox](mindbox.md)
+- [MindBox](../mindbox.md)
