@@ -7,6 +7,7 @@
 ---
 
 Формат:
+
 - Given
 - When
 - Then
