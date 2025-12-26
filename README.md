@@ -10,3 +10,4 @@
     - [Mindbox](business/crm/mindbox.md)  
   - [Кредиты](business/cc/cc.md)
   - [Процессинг](business/pay/processing.md)
+  - [Авторизация QR код](business/auth/qr/qr.md)
