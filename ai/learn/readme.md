@@ -15,7 +15,7 @@
 Библиотека промтов для различных задач в области анализа требований, проектирования систем и взаимодействия с AI‑агентами.
 
 - [ ] Использовать VS Code Snippets
-  - [x] Добавить в [global.code-snippets](../.vscode/global.code-snippets)
+  - [x] Добавить в [global.code-snippets](../../.vscode/global.code-snippets)
   - [ ] Использовать
 - [ ] Библиотека промтов:
   - Continue.dev — полноценный AI‑агент внутри VS Code.

@@ -6,4 +6,4 @@
 Я хочу {цель}  
 Чтобы {ценность}
 
-Добавь Acceptance Criteria.
+Добавь критерии приемки (Acceptance Criteria).
