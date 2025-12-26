@@ -1,0 +1,218 @@
+{
+    "Prompt: Task Brief": {
+        "prefix": "prompt-task",
+        "body": [
+            "You are an expert assistant.\nTask: ${1:Describe the task in one sentence}.\nGoals:\n- ${2:Primary goal}\n- ${3:Secondary goal}\nConstraints: ${4:Constraints}\nDeliverables: ${5:Deliverables}\nProvide a concise plan and acceptance criteria.",
+            ""
+        ],
+        "description": "Template for concise task-brief prompts"
+    },
+    "Prompt: Gherkin Template": {
+        "prefix": "prompt-gherkin",
+        "body": [
+            "As a product owner, write Gherkin scenarios for: ${1:feature name}.\nContext: ${2:context}\nScenario: ${3:scenario name}\nGiven ${4:preconditions}\nWhen ${5:action}\nThen ${6:expected outcome}",
+            ""
+        ],
+        "description": "Starter Gherkin scenario template"
+    },
+    "Prompt: API Request Spec": {
+        "prefix": "prompt-api",
+        "body": [
+            "Generate an API spec for: ${1:resource name}.\nMethod: ${2:GET/POST/PUT/DELETE}\nPath: ${3:/api/resource}\nRequest body: ${4:fields}\nResponse: ${5:example response}\nErrors: ${6:error cases}",
+            ""
+        ],
+        "description": "Template to generate API request/response specs"
+    },
+    "Prompt: DB Entity Definition": {
+        "prefix": "prompt-db",
+        "body": [
+            "Define DB entity `${1:EntityName}` with fields:\n- ${2:fieldName} (${3:type}) — ${4:description}\n- ${5:fieldName} (${6:type}) — ${7:description}\nProvide indexes and example rows.",
+            ""
+        ],
+        "description": "Template for describing DB entities and attributes"
+    },
+    "Use Case Template": {
+        "prefix": "usecase",
+        "body": [
+            "# Use Case: $1",
+            "",
+            "**Акторы:**",
+            "- $2",
+            "",
+            "**Цель:**",
+            "$3",
+            "",
+            "**Preconditions:**",
+            "- $4",
+            "",
+            "**Postconditions:**",
+            "- $5",
+            "",
+            "**Основной сценарий:**",
+            "1. $6",
+            "",
+            "**Альтернативные сценарии:**",
+            "- $7",
+            "",
+            "**Исключения:**",
+            "- $8"
+        ],
+        "description": "Шаблон Use Case"
+    },
+    "User Story Template": {
+        "prefix": "ustory",
+        "body": [
+            "Как $1,",
+            "Я хочу $2,",
+            "Чтобы $3.",
+            "",
+            "**Acceptance Criteria:**",
+            "- Given $4",
+            "- When $5",
+            "- Then $6"
+        ],
+        "description": "Шаблон User Story"
+    },
+    "Gherkin Scenario": {
+        "prefix": "gherkin",
+        "body": [
+            "Feature: $1",
+            "",
+            "Scenario: $2",
+            "  Given $3",
+            "  When $4",
+            "  Then $5"
+        ],
+        "description": "Шаблон Gherkin"
+    },
+    "Functional Requirements": {
+        "prefix": "funcreq",
+        "body": [
+            "# Функциональные требования",
+            "",
+            "Система должна $1.",
+            "",
+            "Дополнительно:",
+            "- $2",
+            "- $3"
+        ],
+        "description": "Шаблон функциональных требований"
+    },
+    "Nonfunctional Requirements": {
+        "prefix": "nfr",
+        "body": [
+            "# Нефункциональные требования",
+            "",
+            "**Производительность:** $1",
+            "**Безопасность:** $2",
+            "**Доступность:** $3",
+            "**UX:** $4",
+            "**Логирование:** $5"
+        ],
+        "description": "Шаблон НФТ"
+    },
+    "API Requirements": {
+        "prefix": "apireq",
+        "body": [
+            "# API Требования",
+            "",
+            "**Endpoint:** $1",
+            "**Method:** $2",
+            "",
+            "**Request:**",
+            "```json",
+            "{",
+            "  \"$3\": \"$4\"",
+            "}",
+            "```",
+            "",
+            "**Response:**",
+            "```json",
+            "{",
+            "  \"$5\": \"$6\"",
+            "}",
+            "```",
+            "",
+            "**Ошибки:**",
+            "- $7"
+        ],
+        "description": "Шаблон API требований"
+    },
+    "Integration Scenario": {
+        "prefix": "intscenario",
+        "body": [
+            "# Интеграционный сценарий",
+            "",
+            "**Инициатор:** $1",
+            "",
+            "**Шаги:**",
+            "1. $2",
+            "2. $3",
+            "",
+            "**Формат данных:**",
+            "```json",
+            "{",
+            "  \"$4\": \"$5\"",
+            "}",
+            "```",
+            "",
+            "**Ошибки:**",
+            "- $6"
+        ],
+        "description": "Шаблон интеграционного сценария"
+    },
+    "Entity Definition": {
+        "prefix": "entity",
+        "body": [
+            "# Сущность: $1",
+            "",
+            "**Атрибуты:**",
+            "- $2: $3",
+            "- $4: $5",
+            "",
+            "**Связи:**",
+            "- $6"
+        ],
+        "description": "Шаблон сущности"
+    },
+    "Test Case Template": {
+        "prefix": "testcase",
+        "body": [
+            "# Test Case: $1",
+            "",
+            "**ID:** $2",
+            "**Предусловия:** $3",
+            "",
+            "**Шаги:**",
+            "1. $4",
+            "2. $5",
+            "",
+            "**Ожидаемый результат:**",
+            "$6"
+        ],
+        "description": "Шаблон тест-кейса"
+    },
+    "Bug Report Template": {
+        "prefix": "bug",
+        "body": [
+            "# Bug Report",
+            "",
+            "**Описание:** $1",
+            "**Окружение:** $2",
+            "",
+            "**Шаги воспроизведения:**",
+            "1. $3",
+            "2. $4",
+            "",
+            "**Фактический результат:**",
+            "$5",
+            "",
+            "**Ожидаемый результат:**",
+            "$6",
+            "",
+            "**Логи:**",
+            "$7"
+        ],
+        "description": "Шаблон баг-репорта"
+    }
+}
