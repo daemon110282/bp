@@ -1,5 +1,9 @@
 # AI
 
+## TODO
+
+- https://code.visualstudio.com/docs/copilot/customization/custom-instructions
+
 ## Patterns and Tools
 
 Коллекция шаблонов, инструментов и ресурсов для эффективного использования AI‑агентов в процессе разработки и анализа требований.
@@ -9,6 +13,8 @@
   - Best Practices: Benefit from community-curated coding standards and patterns.
   - Specialized Assistance: Access expert-level guidance through specialized custom agents.
   - Continuous Learning: Stay updated with the latest patterns and practices across technologies.
+- [ ] [copilot-chat-cookbook](https://docs.github.com/en/copilot/tutorials/copilot-chat-cookbook)
+- [ ] [Notebook LM](notebooklm.md)
 
 ## Promts
 
