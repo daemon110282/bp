@@ -44,4 +44,4 @@
 
 ## Client Data Platform CDP
 
-- [MindBox](../mindbox.md)
+- [MindBox](http://daemon110282.github.io/technology/cdp/mindbox.html)
