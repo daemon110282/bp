@@ -5,9 +5,10 @@
 - Бизнес процессы  
   - [ККТ](business/kkt.md)
   - [СДО](business/dbo/sdo.md)
-  - системы массового обслуживания [СМО](business/smo.md)
+  - Системы массового обслуживания [СМО](business/smo.md)
   - [Лиды](business/crm/leads.md)
-    - [Mindbox](business/crm/mindbox.md)  
+    - [PRM](business/crm/prm.md)
+    - [CRM](business/crm/crm.md)
   - [Кредиты](business/cc/cc.md)
   - [Процессинг](business/pay/processing.md)
-  - [Авторизация QR код](business/auth/qr/qr.md)
+  - Авторизация QR код - см проект bp.qr

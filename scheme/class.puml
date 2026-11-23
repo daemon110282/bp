@@ -1,4 +1,4 @@
-@startuml
+@startuml name="class example"
 car "1" *-- "many" wheel : contains, composition, owns
 garage o-- car : include, aggregation, has
 garage o-- tools: aggregation
