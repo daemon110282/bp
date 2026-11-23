@@ -1,0 +1,52 @@
+@startuml v2_Partner_Origination_Context
+!include <C4/C4_Context>
+
+title C4 L1 — Partner Origination: System Context. PRM НЕ создает заявки сам.
+
+LAYOUT_LEFT_RIGHT()
+SHOW_LEGEND()
+
+Person(customer, "Клиент", "Выбирает финансовый продукт и подтверждает оформление")
+Person(partner_user, "Сотрудник партнера", "Помогает клиенту оформить заявку через POS")
+
+System_Ext(partner, "Платформа партнера", "POS, интернет-магазин, маркетплейс или внешнее приложение")
+
+System_Boundary(bank, "Банк") {
+
+    System(origination, "Partner Origination Platform",  "Прием, валидация, маршрутизация партнерских заявок и публикация событий")
+
+    System_Ext(los, "Product Origination / LOS",        "Обработка заявок, скоринг, решения и оформление продуктов")
+
+    System_Ext(prm, "PRM",        "Партнеры, программы, атрибуция продаж и комиссии")
+
+    System_Ext(crm, "CRM",        "Клиенты, лиды, история продаж и взаимодействий")
+
+    System_Ext(abs, "АБС",        "Договоры, счета, выдачи и операции")
+
+    System_Ext(iam, "IAM / Authorization",        "Идентификация партнеров и авторизация API-клиентов")
+
+    System_Ext(kyc, "KYC / AML",        "Регуляторные проверки клиентов")
+}
+
+Rel(customer, partner, "Выбирает продукт, предоставляет данные и подтверждает оформление", "Web / Mobile")
+Rel(partner_user, partner, "Создает заявку от имени клиента", "POS")
+
+Rel(partner, origination,    "Создает заявки, получает статусы и решения", "REST API / Webhooks")
+
+Rel(origination, iam,    "Проверяет токены и права партнерских API-клиентов", "OAuth 2.0 / OIDC")
+
+Rel(origination, prm,    "Проверяет статус партнера и условия программы", "REST API")
+
+Rel(origination, los,    "Передает заявки и получает результаты обработки", "REST API / Events")
+
+Rel(los, kyc,    "Запрашивает проверки клиентов", "API")
+
+Rel(los, abs,    "Оформляет продукты и регистрирует договоры", "API / Events")
+
+Rel(origination, prm,    "Публикует события партнерских заявок и продаж", "Events")
+
+Rel(origination, crm,    "Публикует события заявок для клиентской истории", "Events")
+
+Rel(abs, prm,    "Передает подтвержденные продуктовые события для комиссий", "Events")
+
+@enduml

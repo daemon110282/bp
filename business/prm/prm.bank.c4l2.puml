@@ -1,0 +1,79 @@
+@startuml v2_Partner_Origination_Containers
+!include <C4/C4_Container>
+
+title C4 L2 — Partner Origination: Container Diagram
+
+LAYOUT_LEFT_RIGHT()
+SHOW_LEGEND()
+
+Person(partner_user, "Пользователь партнера", "Работает в POS или партнерском приложении")
+
+System_Ext(partner, "Partner Platform", "POS / Marketplace / Embedded Finance")
+System_Ext(iam, "IAM", "OAuth 2.0 Authorization Server")
+System_Ext(prm, "PRM", "Партнеры, программы, атрибуция, комиссии")
+System_Ext(crm, "CRM", "История клиента и продаж")
+System_Ext(los, "Product Origination / LOS", "Продуктовые заявки и решения")
+System_Ext(abs, "АБС", "Договоры, выдачи и операции")
+
+System_Boundary(origination, "Partner Origination Platform") {
+
+    Container(gateway, "Partner API Gateway",        "API Gateway",        "TLS, OAuth, rate limiting, маршрутизация API")
+
+    Container(api, "Application API",        "Backend Service",        "Прием и валидация заявок, идемпотентность")
+
+    Container(partner_adapter, "Partner Context Adapter",        "Backend Service",        "Проверка партнера, программ и полномочий")
+
+    Container(orchestrator, "Origination Orchestrator",        "Backend Service",        "Маршрутизация заявок, взаимодействие с LOS")
+
+    Container(status, "Status & Webhook Service",        "Backend Service",        "Обработка статусов и доставка уведомлений партнерам")
+
+    Container(event_publisher, "Event Publisher",        "Backend Service",        "Надежная публикация событий")
+
+    ContainerDb(db, "Application DB",        "PostgreSQL",        "Связи ID, состояния обработки, webhook delivery, outbox")
+
+    ContainerQueue(bus, "Event Bus",        "Kafka / RabbitMQ",        "События заявок, статусов и продаж")
+}
+
+Rel(partner_user, partner, "Оформляет заявку", "Web / POS")
+
+Rel(partner, gateway,    "Создает заявку, запрашивает статус", "HTTPS / REST")
+
+Rel(gateway, iam,    "Проверяет токен и права", "OAuth 2.0")
+
+Rel(gateway, api,    "Маршрутизирует запросы", "HTTPS")
+
+Rel(api, partner_adapter,    "Проверяет доступность программы", "Internal API")
+
+Rel(partner_adapter, prm,    "Получает статус партнера и параметры программы", "REST API")
+
+Rel(api, db,    "Сохраняет регистрацию и idempotency key", "SQL")
+
+Rel(api, orchestrator,    "Инициирует обработку заявки", "Internal API")
+
+Rel(orchestrator, los,    "Передает заявку в продуктовый конвейер", "REST API")
+
+Rel(los, bus,    "Публикует статусы и результаты обработки", "Events")
+
+Rel(orchestrator, db,    "Обновляет связи и состояния обработки", "SQL")
+
+Rel(bus, status,    "Доставляет статусы заявок", "Events")
+
+Rel(status, db,    "Читает связи и сохраняет доставки", "SQL")
+
+Rel(status, partner,    "Передает разрешенные статусы", "HTTPS / Webhooks")
+
+Rel(api, event_publisher,    "Инициирует публикацию событий", "Internal API")
+
+Rel(event_publisher, db,    "Читает outbox", "SQL")
+
+Rel(event_publisher, bus,    "Публикует события", "Events")
+
+Rel(bus, prm,    "События заявок и продаж для атрибуции", "Events")
+
+Rel(bus, crm,    "События заявок для клиентской истории", "Events")
+
+Rel(los, abs,    "Оформляет продукт", "API")
+
+Rel(abs, bus,    "Подтверждает выдачу или активацию", "Events")
+
+@enduml
