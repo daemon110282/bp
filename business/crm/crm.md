@@ -1,8 +1,13 @@
 # Customer Relationship Management (CRM)
 
 - [Customer Relationship Management (CRM)](#customer-relationship-management-crm)
+  - [Зачем](#зачем)
   - [CRM в банковской сфере](#crm-в-банковской-сфере)
   - [Доменная модель](#доменная-модель)
+
+## Зачем
+
+Класс систем [CRM](http://daemon110282.github.io/arch/system.class/crm.html) (Customer Relationship Management) — система __управления взаимоотношениями с клиентами__, предназначенная для __автоматизации продаж, маркетинга, обслуживания клиентов__ и анализа клиентских данных.
 
 ## CRM в банковской сфере
 
