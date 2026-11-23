@@ -10,7 +10,7 @@
   - [Архитектура](#архитектура)
     - [C4 Level 1 — System Context Diagram](#c4-level-1--system-context-diagram)
     - [C4 Level 2 — Container Diagram](#c4-level-2--container-diagram)
-  - [Доменная модель](#доменная-модель)
+  - [Модель данных](#модель-данных)
     - [Модель идентификаторов](#модель-идентификаторов)
 
 ## Зачем
@@ -112,11 +112,11 @@ __POS-кредитование и Embedded Finance__ не являются ос�
 
 Особенно важно выделить __Commission Engine__ как самостоятельный логический компонент, даже если физически он реализован внутри CRM. Его расчеты должны быть воспроизводимыми, учитывать версии правил, исходные события, корректировки и повторную обработку сообщений.
 
-![Схема](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/daemon110282/bp/refs/heads/main/business/crm/prm.bank.c4l1.puml)
+![Схема](prm.bank.c4l1.puml)
 
 ### C4 Level 2 — Container Diagram
 
-![Схема](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/daemon110282/bp/refs/heads/main/business/crm/prm.bank.c4l2.puml)
+![Схема](prm.bank.c4l2.puml)
 
 Для Partner Origination Platform предлагаю следующие контейнеры:
 
@@ -144,14 +144,16 @@ __POS-кредитование и Embedded Finance__ не являются ос�
 | 9   | Event Bus → PRM                  | События для партнерской атрибуции                             |
 | 10  | АБС → Event Bus → PRM            | Подтверждение выдачи/активации для начисления комиссии        |
 
-## Доменная модель
+## Модель данных
 
-| Владелец | Сущность       | Назначение                  |
-| -------- | -------------- | --------------------------- |
-| PRM      | PartnerLead    | Партнерское обращение в PRM |
-| PRM      | Partner        |                             |
-| PRM      | PartnerProgram |                             |
-| PRM      | Attribution    |                             |
+| Владелец | Сущность                                                         |
+| -------- | ---------------------------------------------------------------- |
+| PRM      | [PartnerLead](prm.data.model.md#prm-07-партнерские-лиды)                                                      |
+| PRM      | [Partner](prm.data.model.md#prm-01-реестр-партнеров)             |
+| PRM      | [PartnerProgram](prm.data.model.md#prm-04-партнерские-программы) |
+| PRM      | [Attribution](prm.data.model.md#prm-09-атрибуция-продаж)         |
+
+Подробная [модель данных](prm.data.model.md)
 
 ### Модель идентификаторов
 
